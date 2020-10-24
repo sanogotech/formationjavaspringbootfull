@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HomeIndexAppController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionstocks</a> &gt; <a href="index.source.html" class="el_package">com.macrosoft.gestionboot.controller.customer</a> &gt; <span class="el_source">HomeIndexAppController.java</span></div><h1>HomeIndexAppController.java</h1><pre class="source lang-java linenums">package com.macrosoft.gestionboot.controller.customer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+
+
+@Controller
+<span class="nc" id="L13">public class HomeIndexAppController {</span>
+	
+<span class="nc" id="L15">	private static final Logger logger = LoggerFactory.getLogger(HomeIndexAppController.class);</span>
+
+
+	 @Value(&quot;${message.default.welcome}&quot;)
+	    private  String welcomeMessage;
+
+	    @Value(&quot;${message.default.goodbye}&quot;)
+	    private  String goodBye;
+
+	/*
+	 * @RequestMapping(&quot;/&quot;) public String viewHomePage(Model model) {
+	 * 
+	 * logger.debug(&quot;Start  Home Index  ...&quot; + welcomeMessage);
+	 * 
+	 * return &quot;index&quot;; }
+	 */
+	
+	/**
+	 * addAttributes() method will be the very first to run, prior to the rest of the @RequestMapping methods.
+	 * @param model
+	 */
+	@ModelAttribute
+	public void addAttributes(Model model) {
+<span class="nc" id="L38">	    model.addAttribute(&quot;msg&quot;, &quot;Welcome to the DashBoard Spring Boot !&quot;);</span>
+<span class="nc" id="L39">	}</span>
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

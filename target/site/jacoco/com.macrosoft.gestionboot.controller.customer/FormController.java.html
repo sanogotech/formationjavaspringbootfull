@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FormController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionstocks</a> &gt; <a href="index.source.html" class="el_package">com.macrosoft.gestionboot.controller.customer</a> &gt; <span class="el_source">FormController.java</span></div><h1>FormController.java</h1><pre class="source lang-java linenums">package com.macrosoft.gestionboot.controller.customer;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.macrosoft.gestionboot.form.CommandForm;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+<span class="nc" id="L16">@Slf4j</span>
+@Controller
+<span class="nc" id="L18">public class FormController {</span>
+	
+	@GetMapping(&quot;/formindex&quot;)
+	public String fooForm(Model model) {
+<span class="nc" id="L22">		model.addAttribute( &quot;command&quot;, new CommandForm());</span>
+		
+
+		
+<span class="nc" id="L26">		return &quot;fooForm&quot;;</span>
+	}
+	
+	@ModelAttribute(&quot;multiCheckboxAllValues&quot;)
+    public String[] getMultiCheckboxAllValues() {
+<span class="nc" id="L31">        return new String[] {&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;};</span>
+    }
+	
+	
+	// set of values applied to a single-select radio button set, and drop-down list.
+	@ModelAttribute(&quot;singleSelectAllValues&quot;)
+    public String[] getSingleSelectAllValues() {
+<span class="nc" id="L38">        return new String[] {&quot;YES&quot;, &quot;NO&quot;, &quot;MAYBE&quot;};</span>
+    }
+	
+	
+	@PostMapping(&quot;/fooform&quot;)
+	public String foobarPost(
+			@ModelAttribute(&quot;command&quot;) CommandForm command,
+			// WARN: BindingResult *must* immediately follow the Command.
+			// https://stackoverflow.com/a/29883178/1626026
+			BindingResult bindingResult,   
+			Model model,
+			RedirectAttributes ra ) {
+		
+<span class="nc" id="L51">		log.debug(&quot;form submission.&quot;);</span>
+		
+<span class="nc bnc" id="L53" title="All 2 branches missed.">		if ( bindingResult.hasErrors() ) {</span>
+<span class="nc" id="L54">			return &quot;fooForm&quot;;</span>
+		}
+
+<span class="nc" id="L57">		ra.addFlashAttribute(&quot;command&quot;, command);</span>
+		
+<span class="nc" id="L59">		return &quot;redirect:/fooresult&quot;;</span>
+	}
+
+	@GetMapping(&quot;/fooresult&quot;)
+	public String fooresult(
+			@ModelAttribute(&quot;command&quot;) CommandForm command,
+			Model model) {
+		
+<span class="nc" id="L67">		log.debug( &quot;!!!&quot; + command.toString());</span>
+		
+<span class="nc" id="L69">		return &quot;fooResult&quot;;</span>
+	}
+	
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

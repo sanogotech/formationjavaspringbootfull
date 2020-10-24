@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionstocks</a> &gt; <a href="index.source.html" class="el_package">com.macrosoft.gestionboot.service.customer</a> &gt; <span class="el_source">ProductServiceImpl.java</span></div><h1>ProductServiceImpl.java</h1><pre class="source lang-java linenums">package com.macrosoft.gestionboot.service.customer;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.macrosoft.gestionboot.model.customer.Product;
+import com.macrosoft.gestionboot.repository.customer.ProductRepository;
+
+
+
+@Service
+@Transactional
+<span class="nc" id="L16">public class ProductServiceImpl  implements ProductService {</span>
+
+	@Autowired
+	private ProductRepository repo;
+	
+	public List&lt;Product&gt; listAll() {
+<span class="nc" id="L22">		return repo.findAll();</span>
+	}
+	
+	public List&lt;Product&gt; searchByName(String name) {
+<span class="nc" id="L26">		return repo.findByName(name);</span>
+	}
+	
+	public void save(Product product) {
+<span class="nc" id="L30">		repo.save(product);</span>
+	
+<span class="nc" id="L32">	}</span>
+	
+	public Product get(long id) {
+<span class="nc" id="L35">		return repo.findById(id).get();</span>
+	}
+	
+	public void delete(long id) {
+<span class="nc" id="L39">		repo.deleteById(id);</span>
+<span class="nc" id="L40">	}</span>
+
+	@Override
+	public List&lt;Product&gt; searchByNameIgnoreCase(String name) {
+<span class="nc" id="L44">		return repo.findByNameIgnoreCase(name);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

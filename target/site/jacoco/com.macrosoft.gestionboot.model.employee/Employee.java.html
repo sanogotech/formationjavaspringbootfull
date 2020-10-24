@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionstocks</a> &gt; <a href="index.source.html" class="el_package">com.macrosoft.gestionboot.model.employee</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">package com.macrosoft.gestionboot.model.employee;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+
+
+/**
+ * Description of Employee.
+ * 
+ * @author User
+ */
+@Entity
+public class Employee implements Serializable{
+	
+	@Id
+	@GeneratedValue
+	//Default
+	// @GeneratedValue(strategy=AUTO)
+	private Long  id;
+	
+	private String firstName;
+	
+	private String lastName;
+	
+	private String email;
+	
+	private String phoneNumber;
+	
+	private long salary;
+	
+	private LocalDate hireDate;
+	
+	
+	  @ManyToOne(cascade={CascadeType.ALL})
+	  @JoinColumn(name=&quot;manager_id&quot;)
+	  private Employee manager;
+	 
+	//`manager_id` BIGINT(20) NULL DEFAULT NULL
+	//@ManyToOne
+	//+s employee --- 0 or 1 Manager
+	
+	
+	  @OneToMany(mappedBy=&quot;manager&quot;)
+	  private Set&lt;Employee&gt; subordinates;
+	  //private Set&lt;Employee&gt; subordinates = new HashSet&lt;Employee&gt;();
+	  
+	 
+	
+	/*
+	@Column(name = &quot;local_time&quot;, columnDefinition = &quot;TIME&quot;)
+	private LocalTime localTime;
+	08:20:45.123456789
+	 
+	@Column(name = &quot;local_date&quot;, columnDefinition = &quot;DATE&quot;)
+	private LocalDate localDate; 
+    *  yyyy-MM-dd 
+	 
+	@Column(name = &quot;local_date_time&quot;, columnDefinition = &quot;TIMESTAMP&quot;)
+	private LocalDateTime localDateTime;
+	https://howtodoinjava.com/java/date-time/localdate-format-example/
+	
+	//1 - default time pattern
+String time = &quot;2019-03-27T10:15:30&quot;;
+//2 - specific date time pattern
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss a&quot;);
+String time1 = &quot;2019-03-27 10:15:30 AM&quot;;
+LocalDateTime localTimeObj1 = LocalDateTime.parse(time1, formatter);
+
+	
+	
+
+	/**
+	 * Description of the property jobs.
+	 */
+	@OneToMany
+	public Set&lt;Job&gt; jobs;
+
+
+
+	/**
+	 * The constructor.
+	 */
+	public Employee() {
+<span class="nc" id="L95">		super();</span>
+<span class="nc" id="L96">	}</span>
+
+	
+
+	public Employee(Long id, String firstName, String lastName) {
+<span class="nc" id="L101">		super();</span>
+<span class="nc" id="L102">		this.id = id;</span>
+<span class="nc" id="L103">		this.firstName = firstName;</span>
+<span class="nc" id="L104">		this.lastName = lastName;</span>
+<span class="nc" id="L105">	}</span>
+
+
+
+	/**
+	 * Returns jobs.
+	 * @return jobs 
+	 */
+	public Set&lt;Job&gt; getJobs() {
+<span class="nc" id="L114">		return this.jobs;</span>
+	}
+
+	public String getFirstName() {
+<span class="nc" id="L118">		return firstName;</span>
+	}
+
+	public void setFirstName(String firstName) {
+<span class="nc" id="L122">		this.firstName = firstName;</span>
+<span class="nc" id="L123">	}</span>
+
+	public String getLastName() {
+<span class="nc" id="L126">		return lastName;</span>
+	}
+
+	public void setLastName(String lastName) {
+<span class="nc" id="L130">		this.lastName = lastName;</span>
+<span class="nc" id="L131">	}</span>
+
+	public String getEmail() {
+<span class="nc" id="L134">		return email;</span>
+	}
+
+	public void setEmail(String email) {
+<span class="nc" id="L138">		this.email = email;</span>
+<span class="nc" id="L139">	}</span>
+
+	public String getPhoneNumber() {
+<span class="nc" id="L142">		return phoneNumber;</span>
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+<span class="nc" id="L146">		this.phoneNumber = phoneNumber;</span>
+<span class="nc" id="L147">	}</span>
+
+	public long getSalary() {
+<span class="nc" id="L150">		return salary;</span>
+	}
+
+	public void setSalary(long salary) {
+<span class="nc" id="L154">		this.salary = salary;</span>
+<span class="nc" id="L155">	}</span>
+
+	public LocalDate getHireDate() {
+<span class="nc" id="L158">		return hireDate;</span>
+	}
+
+	public void setHireDate(LocalDate hireDate) {
+<span class="nc" id="L162">		this.hireDate = hireDate;</span>
+<span class="nc" id="L163">	}</span>
+
+	
+	  public Employee getManager() {
+<span class="nc" id="L167">		  return manager; </span>
+	  }
+	  
+	  public void setManager(Employee manager) { 
+<span class="nc" id="L171">		  this.manager = manager;</span>
+<span class="nc" id="L172">	  }</span>
+	 
+
+	
+	  public Set&lt;Employee&gt; getSubordinates() { 
+<span class="nc" id="L177">		  return subordinates; </span>
+	  }
+	  
+	  public void setSubordinates(Set&lt;Employee&gt; subordinates) { 
+<span class="nc" id="L181">		  this.subordinates = subordinates; </span>
+<span class="nc" id="L182">	 }</span>
+	 
+
+	public void setJobs(Set&lt;Job&gt; jobs) {
+<span class="nc" id="L186">		this.jobs = jobs;</span>
+<span class="nc" id="L187">	}</span>
+
+
+
+	public Long getId() {
+<span class="nc" id="L192">		return id;</span>
+	}
+
+
+
+	public void setId(Long id) {
+<span class="nc" id="L198">		this.id = id;</span>
+<span class="nc" id="L199">	}</span>
+
+
+
+	@Override
+	public String toString() {
+<span class="nc" id="L205">		return &quot;Employee [id=&quot; + id + &quot;, firstName=&quot; + firstName + &quot;, lastName=&quot; + lastName + &quot;]&quot;;</span>
+	}
+	
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

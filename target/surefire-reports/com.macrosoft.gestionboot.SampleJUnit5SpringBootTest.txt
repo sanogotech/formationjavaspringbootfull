@@ -1,0 +1,96 @@
+-------------------------------------------------------------------------------
+Test set: com.macrosoft.gestionboot.SampleJUnit5SpringBootTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 26.368 s <<< FAILURE! - in com.macrosoft.gestionboot.SampleJUnit5SpringBootTest
+shouldBeTrue  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: 
+Error creating bean with name 'cacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Unsatisfied dependency expressed through method 'cacheManager' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ehCacheCacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'ehCacheCacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: org.springframework.beans.BeanInstantiationException: 
+Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: net.sf.ehcache.CacheException: 
+Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+
+testGet  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: 
+Error creating bean with name 'cacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Unsatisfied dependency expressed through method 'cacheManager' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ehCacheCacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'ehCacheCacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: org.springframework.beans.BeanInstantiationException: 
+Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: net.sf.ehcache.CacheException: 
+Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+
+shouldBeEqual  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: 
+Error creating bean with name 'cacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Unsatisfied dependency expressed through method 'cacheManager' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ehCacheCacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'ehCacheCacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: org.springframework.beans.BeanInstantiationException: 
+Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: net.sf.ehcache.CacheException: 
+Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+
+shouldBeTrue  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: 
+Error creating bean with name 'cacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Unsatisfied dependency expressed through method 'cacheManager' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ehCacheCacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'ehCacheCacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: org.springframework.beans.BeanInstantiationException: 
+Failed to instantiate [net.sf.ehcache.CacheManager]: Factory method 'ehCacheCacheManager' threw exception; nested exception is net.sf.ehcache.CacheException: Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+Caused by: net.sf.ehcache.CacheException: 
+Another unnamed CacheManager already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: DefaultConfigurationSource [ ehcache.xml or ehcache-failsafe.xml ]
+

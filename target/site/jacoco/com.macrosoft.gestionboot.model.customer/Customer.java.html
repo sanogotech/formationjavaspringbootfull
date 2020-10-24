@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Customer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionstocks</a> &gt; <a href="index.source.html" class="el_package">com.macrosoft.gestionboot.model.customer</a> &gt; <span class="el_source">Customer.java</span></div><h1>Customer.java</h1><pre class="source lang-java linenums">package com.macrosoft.gestionboot.model.customer;
+
+import java.util.List;
+
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name =&quot;Client&quot;)
+<span class="nc" id="L12">public class Customer {</span>
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @NotNull
+    @Size(min=5, max=190)
+    @Column
+    private String name;
+
+    @NotNull
+    @Size(min = 8, max = 13)
+    private String phone;
+
+    @NotNull
+    @Email
+    @Size(min = 10, max = 190)
+    @Column(unique = true)
+    private String email;
+
+    @NotNull
+    @Size(min = 5, max = 190)
+    private String location;
+
+    @NotNull
+    private String fileName;
+	
+	
+	//mappedBy and how to use them in a one-to-many bidirectional relationship.
+	//mappedBy is the name of the association-mapping attribute on the owning side. 
+	@OneToMany(mappedBy = &quot;customer&quot;)
+	private List&lt;PurchaseOrder&gt;  purchaseOrderList;
+	
+	@OneToOne
+	private ShippingInfo shippingInfo;
+	
+	@OneToOne
+	private BillingInfo billingInfo;
+
+    public Long getId()
+    {
+<span class="nc" id="L54">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L58">        this.id = id;</span>
+<span class="nc" id="L59">    }</span>
+
+    public String getName() {
+<span class="nc" id="L62">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L66">        this.name = name;</span>
+<span class="nc" id="L67">    }</span>
+
+    public String getPhone() {
+<span class="nc" id="L70">        return phone;</span>
+    }
+
+    public void setPhone(String phone) {
+<span class="nc" id="L74">        this.phone = phone;</span>
+<span class="nc" id="L75">    }</span>
+
+    public String getEmail() {
+<span class="nc" id="L78">        return email;</span>
+    }
+
+    public void setEmail(String email) {
+<span class="nc" id="L82">        this.email = email;</span>
+<span class="nc" id="L83">    }</span>
+
+    public String getLocation() {
+<span class="nc" id="L86">        return location;</span>
+    }
+
+    public void setLocation(String location) {
+<span class="nc" id="L90">        this.location = location;</span>
+<span class="nc" id="L91">    }</span>
+
+    public String getFileName() {
+<span class="nc" id="L94">        return fileName;</span>
+    }
+
+    public void setFileName(String fileName) {
+<span class="nc" id="L98">        this.fileName = fileName;</span>
+<span class="nc" id="L99">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

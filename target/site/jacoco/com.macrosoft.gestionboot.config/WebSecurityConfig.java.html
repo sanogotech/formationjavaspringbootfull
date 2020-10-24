@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WebSecurityConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gestionstocks</a> &gt; <a href="index.source.html" class="el_package">com.macrosoft.gestionboot.config</a> &gt; <span class="el_source">WebSecurityConfig.java</span></div><h1>WebSecurityConfig.java</h1><pre class="source lang-java linenums">package com.macrosoft.gestionboot.config;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+
+@Configuration
+@EnableWebSecurity
+//TODO
+/*
+@EnableAspectJAutoProxy(proxyTargetClass = true)
+@EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true)
+*/
+<span class="nc" id="L35">public class WebSecurityConfig extends WebSecurityConfigurerAdapter {</span>
+	
+<span class="nc" id="L37">	private final Logger log = LoggerFactory.getLogger(this.getClass());</span>
+
+    @Autowired
+    private DataSource datasource;
+    
+    @Autowired
+	JdbcUserDetailsManager jdbcUserDetailsManager;
+    
+    
+    @Value(&quot;${spring.queries.users-by-username-query}&quot;)
+    private String usersQuery;
+    
+    @Value(&quot;${spring.queries.authorities-by-username-query}&quot;)
+    private String authoritiesQuery;
+    
+    
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    
+    //TODO
+    //@Autowired
+    //private CustomerRepository customerRepository;
+    
+
+    
+    
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+<span class="nc" id="L65">        http.authorizeRequests()</span>
+<span class="nc" id="L66">                .antMatchers(&quot;/&quot;,&quot;/login&quot;).permitAll()</span>
+<span class="nc" id="L67">                .antMatchers(&quot;/gestion/*&quot;)</span>
+<span class="nc" id="L68">                .hasAnyAuthority(&quot;ROLE_USER&quot;, &quot;ROLE_ADMIN&quot;)</span>
+<span class="nc" id="L69">                .antMatchers(&quot;/gestion/admin/**&quot;)</span>
+<span class="nc" id="L70">                .hasAnyAuthority(&quot;ROLE_ADMIN&quot;)</span>
+<span class="nc" id="L71">                .anyRequest().authenticated()</span>
+<span class="nc" id="L72">                .and()</span>
+<span class="nc" id="L73">                .formLogin()</span>
+<span class="nc" id="L74">                .failureUrl(&quot;/login?error&quot;)</span>
+<span class="nc" id="L75">                .loginPage(&quot;/login&quot;)</span>
+                //.defaultSuccessUrl(&quot;/home&quot;)
+<span class="nc" id="L77">                .defaultSuccessUrl(&quot;/home&quot;,true)</span>
+<span class="nc" id="L78">                .permitAll()</span>
+<span class="nc" id="L79">                .and()</span>
+<span class="nc" id="L80">            .logout()</span>
+<span class="nc" id="L81">                .logoutRequestMatcher(new AntPathRequestMatcher(&quot;/logout&quot;))</span>
+<span class="nc" id="L82">                .logoutSuccessUrl(&quot;/login&quot;)</span>
+<span class="nc" id="L83">                .permitAll();</span>
+<span class="nc" id="L84">    }</span>
+	
+    //      .loginProcessingUrl(&quot;/perform_login&quot;)
+    
+    
+    @Autowired
+    protected void  configureGlobal(AuthenticationManagerBuilder auth)
+            throws Exception {
+    	
+<span class="nc" id="L93">    	log.info(&quot;Start Spring Security  configure method:&quot;);</span>
+    	
+<span class="nc" id="L95">    	log.debug(&quot;*** usesQuery login ***: &quot;+ usersQuery);</span>
+<span class="nc" id="L96">    	log.debug(&quot;*** authoritiesQuery login ***: &quot;+ authoritiesQuery);</span>
+    	
+<span class="nc" id="L98">        auth.</span>
+<span class="nc" id="L99">                jdbcAuthentication()</span>
+<span class="nc" id="L100">                .usersByUsernameQuery(usersQuery)</span>
+<span class="nc" id="L101">                 .authoritiesByUsernameQuery(authoritiesQuery)</span>
+<span class="nc" id="L102">                .dataSource(datasource)</span>
+<span class="nc" id="L103">                .passwordEncoder(bCryptPasswordEncoder);</span>
+       
+       
+     
+        //Use Spring Boots User detailsMAnager
+        //JdbcUserDetailsManager userDetailsService = new JdbcUserDetailsManager();
+
+        //Set our Datasource to use the one defined in application.properties
+<span class="nc" id="L111">        jdbcUserDetailsManager.setDataSource(datasource);</span>
+        
+      //add components
+        /*
+        auth.userDetailsService( jdbcUserDetailsManager).passwordEncoder(bCryptPasswordEncoder);
+        auth.jdbcAuthentication().dataSource(datasource);*/
+
+        // add new user &quot;user&quot; with password &quot;password&quot; - password will be encrypted
+<span class="nc bnc" id="L119" title="All 2 branches missed.">        if (! jdbcUserDetailsManager.userExists(&quot;admin&quot;)) {</span>
+        	
+<span class="nc" id="L121">            List&lt;GrantedAuthority&gt; authorities = new ArrayList&lt;GrantedAuthority&gt;();</span>
+<span class="nc" id="L122">            authorities.add(new SimpleGrantedAuthority(&quot;ROLE_USER&quot;));</span>
+<span class="nc" id="L123">            User userDetails = new User(&quot;admin&quot;, bCryptPasswordEncoder.encode(&quot;admin2020&quot;), authorities);</span>
+           
+           
+<span class="nc" id="L126">            jdbcUserDetailsManager.createUser(userDetails );</span>
+            
+<span class="nc" id="L128">        	log.debug(&quot;configureGlobal method: createUser&quot; +  userDetails.getUsername()); </span>
+            
+        
+        
+        }
+        
+<span class="nc" id="L134">    }</span>
+
+  
+    
+    
+    @Override
+	public void configure(WebSecurity web) throws Exception {
+<span class="nc" id="L141">	    web</span>
+<span class="nc" id="L142">	       .ignoring()</span>
+<span class="nc" id="L143">	       .antMatchers(&quot;/static/**&quot;, &quot;/css/**&quot;, &quot;/js/**&quot;, &quot;/images/**&quot;);</span>
+	   
+<span class="nc" id="L145">	}</span>
+    
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+<span class="nc" id="L149">        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();</span>
+<span class="nc" id="L150">        return bCryptPasswordEncoder;</span>
+    }
+    
+    @Bean
+    public   JdbcUserDetailsManager  jdbcUserDetailsManager() {
+    	 //Use Spring Boots User detailsMAnager
+<span class="nc" id="L156">        JdbcUserDetailsManager userDetailsService = new JdbcUserDetailsManager();</span>
+      //Set our Datasource to use the one defined in application.properties
+<span class="nc" id="L158">       userDetailsService.setDataSource(datasource);</span>
+<span class="nc" id="L159">        return  userDetailsService;</span>
+    }
+	
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
