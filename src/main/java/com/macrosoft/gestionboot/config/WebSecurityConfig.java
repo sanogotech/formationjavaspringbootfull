@@ -39,8 +39,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource datasource;
     
-    @Autowired
-	JdbcUserDetailsManager jdbcUserDetailsManager;
+	
+    //@Autowired
+	//JdbcUserDetailsManager jdbcUserDetailsManager = jdbcUserDetailsManager();
     
     
     @Value("${spring.queries.users-by-username-query}")
@@ -106,6 +107,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      
         //Use Spring Boots User detailsMAnager
         //JdbcUserDetailsManager userDetailsService = new JdbcUserDetailsManager();
+		
+		JdbcUserDetailsManager jdbcUserDetailsManager =jdbcUserDetailsManager();
 
         //Set our Datasource to use the one defined in application.properties
         jdbcUserDetailsManager.setDataSource(datasource);
@@ -150,6 +153,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return bCryptPasswordEncoder;
     }
     
+	
     @Bean
     public   JdbcUserDetailsManager  jdbcUserDetailsManager() {
     	 //Use Spring Boots User detailsMAnager

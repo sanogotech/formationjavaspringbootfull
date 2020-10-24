@@ -1,0 +1,380 @@
+2020-10-24 20:51:21.810  INFO 14300 --- [main] c.m.gestionboot.GestionBootApplication   : Starting GestionBootApplication v0.0.1-SNAPSHOT on DESKTOP-OR1MPIC with PID 14300 (C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target\gestionboot-0.0.1-SNAPSHOT.jar started by User in C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target)
+2020-10-24 20:51:21.820 DEBUG 14300 --- [main] c.m.gestionboot.GestionBootApplication   : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-10-24 20:51:21.824  INFO 14300 --- [main] c.m.gestionboot.GestionBootApplication   : The following profiles are active: dev
+2020-10-24 20:51:25.041  INFO 14300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-10-24 20:51:25.321  INFO 14300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 245ms. Found 8 JPA repository interfaces.
+2020-10-24 20:51:28.957  INFO 14300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-24 20:51:28.983  INFO 14300 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-24 20:51:28.984  INFO 14300 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-10-24 20:51:29.110  INFO 14300 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-24 20:51:29.111  INFO 14300 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7121 ms
+2020-10-24 20:51:29.720  INFO 14300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-24 20:51:30.389  INFO 14300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-24 20:51:30.410  INFO 14300 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2web'. Database available at 'jdbc:h2:mem:gestionmanager'
+2020-10-24 20:51:31.388  WARN 14300 --- [main] n.sf.ehcache.config.CacheConfiguration   : Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+2020-10-24 20:51:32.031  INFO 14300 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-10-24 20:51:32.132  INFO 14300 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:gestionmanager (H2 1.4)
+2020-10-24 20:51:32.226  WARN 14300 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 1.4.199.
+2020-10-24 20:51:32.344  INFO 14300 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.076s)
+2020-10-24 20:51:32.385  INFO 14300 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-10-24 20:51:32.513  INFO 14300 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2020-10-24 20:51:32.532  INFO 14300 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1 - Init Table
+2020-10-24 20:51:32.603  INFO 14300 --- [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC" (execution time 00:00.113s)
+2020-10-24 20:51:32.837  INFO 14300 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-24 20:51:33.061  INFO 14300 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-10-24 20:51:33.458  INFO 14300 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-24 20:51:33.787  INFO 14300 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-24 20:51:36.472  INFO 14300 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-24 20:51:36.495  INFO 14300 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 20:51:38.084  WARN 14300 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-24 20:51:38.707  WARN 14300 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'homeController': Unsatisfied dependency expressed through field 'jdbcUserDetailsManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'jdbcUserDetailsManager'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'jdbcUserDetailsManager': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2020-10-24 20:51:38.715  INFO 14300 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 20:51:38.731  INFO 14300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-24 20:51:38.742  INFO 14300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-24 20:51:38.755  INFO 14300 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-10-24 20:51:38.796  INFO 14300 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-24 20:51:38.818 ERROR 14300 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'homeController': Unsatisfied dependency expressed through field 'jdbcUserDetailsManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'jdbcUserDetailsManager'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'jdbcUserDetailsManager': Requested bean is currently in creation: Is there an unresolvable circular reference?
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:882) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at com.macrosoft.gestionboot.GestionBootApplication.main(GestionBootApplication.java:24) ~[classes!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:51) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'jdbcUserDetailsManager'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'jdbcUserDetailsManager': Requested bean is currently in creation: Is there an unresolvable circular reference?
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1290) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1210) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'jdbcUserDetailsManager': Requested bean is currently in creation: Is there an unresolvable circular reference?
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.beforeSingletonCreation(DefaultSingletonBeanRegistry.java:339) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:215) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1290) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1210) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	... 49 common frames omitted
+
+2020-10-24 20:59:07.493  INFO 5412 --- [main] c.m.gestionboot.GestionBootApplication   : Starting GestionBootApplication v0.0.1-SNAPSHOT on DESKTOP-OR1MPIC with PID 5412 (C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target\gestionboot-0.0.1-SNAPSHOT.jar started by User in C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target)
+2020-10-24 20:59:07.500 DEBUG 5412 --- [main] c.m.gestionboot.GestionBootApplication   : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-10-24 20:59:07.503  INFO 5412 --- [main] c.m.gestionboot.GestionBootApplication   : The following profiles are active: dev
+2020-10-24 20:59:10.593  INFO 5412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-10-24 20:59:10.889  INFO 5412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 269ms. Found 8 JPA repository interfaces.
+2020-10-24 20:59:14.634  INFO 5412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-24 20:59:14.669  INFO 5412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-24 20:59:14.671  INFO 5412 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-10-24 20:59:14.806  INFO 5412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-24 20:59:14.807  INFO 5412 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7162 ms
+2020-10-24 20:59:15.534  INFO 5412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-24 20:59:16.221  INFO 5412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-24 20:59:16.242  INFO 5412 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2web'. Database available at 'jdbc:h2:mem:gestionmanager'
+2020-10-24 20:59:17.316  WARN 5412 --- [main] n.sf.ehcache.config.CacheConfiguration   : Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+2020-10-24 20:59:17.972  INFO 5412 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-10-24 20:59:18.070  INFO 5412 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:gestionmanager (H2 1.4)
+2020-10-24 20:59:18.161  WARN 5412 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 1.4.199.
+2020-10-24 20:59:18.308  INFO 5412 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.092s)
+2020-10-24 20:59:18.369  INFO 5412 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-10-24 20:59:18.487  INFO 5412 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2020-10-24 20:59:18.503  INFO 5412 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1 - Init Table
+2020-10-24 20:59:18.565  INFO 5412 --- [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC" (execution time 00:00.099s)
+2020-10-24 20:59:18.844  INFO 5412 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-24 20:59:19.066  INFO 5412 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-10-24 20:59:19.425  INFO 5412 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-24 20:59:19.733  INFO 5412 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-24 20:59:22.481  INFO 5412 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-24 20:59:22.505  INFO 5412 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 20:59:24.052  WARN 5412 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-24 20:59:24.765  INFO 5412 --- [main] tyConfig$$EnhancerBySpringCGLIB$$2767a06 : Start Spring Security  configure method:
+2020-10-24 20:59:24.766 DEBUG 5412 --- [main] tyConfig$$EnhancerBySpringCGLIB$$2767a06 : *** usesQuery login ***: SELECT username, password, enabled from users where username = ?
+2020-10-24 20:59:24.770 DEBUG 5412 --- [main] tyConfig$$EnhancerBySpringCGLIB$$2767a06 : *** authoritiesQuery login ***: SELECT u.username, a.authority FROM authorities a, users u WHERE u.username =?  AND u.username = a.username
+2020-10-24 20:59:24.817  WARN 5412 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webSecurityConfig': Injection of autowired dependencies failed; nested exception is java.lang.NullPointerException
+2020-10-24 20:59:24.823  INFO 5412 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 20:59:24.842  INFO 5412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-24 20:59:24.854  INFO 5412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-24 20:59:24.869  INFO 5412 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-10-24 20:59:24.909  INFO 5412 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-24 20:59:24.926 ERROR 5412 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webSecurityConfig': Injection of autowired dependencies failed; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:882) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at com.macrosoft.gestionboot.GestionBootApplication.main(GestionBootApplication.java:24) ~[classes!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:51) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: java.lang.NullPointerException: null
+	at com.macrosoft.gestionboot.config.WebSecurityConfig.configureGlobal(WebSecurityConfig.java:112) ~[classes!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:755) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	... 25 common frames omitted
+
+2020-10-24 21:03:37.654  INFO 7228 --- [main] c.m.gestionboot.GestionBootApplication   : Starting GestionBootApplication v0.0.1-SNAPSHOT on DESKTOP-OR1MPIC with PID 7228 (C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target\gestionboot-0.0.1-SNAPSHOT.jar started by User in C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target)
+2020-10-24 21:03:37.667 DEBUG 7228 --- [main] c.m.gestionboot.GestionBootApplication   : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-10-24 21:03:37.670  INFO 7228 --- [main] c.m.gestionboot.GestionBootApplication   : The following profiles are active: dev
+2020-10-24 21:03:40.841  INFO 7228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-10-24 21:03:41.076  INFO 7228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 212ms. Found 8 JPA repository interfaces.
+2020-10-24 21:03:44.938  INFO 7228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-24 21:03:44.964  INFO 7228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-24 21:03:44.966  INFO 7228 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-10-24 21:03:45.116  INFO 7228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-24 21:03:45.117  INFO 7228 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7303 ms
+2020-10-24 21:03:45.723  INFO 7228 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-24 21:03:46.391  INFO 7228 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-24 21:03:46.417  INFO 7228 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2web'. Database available at 'jdbc:h2:mem:gestionmanager'
+2020-10-24 21:03:47.475  WARN 7228 --- [main] n.sf.ehcache.config.CacheConfiguration   : Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+2020-10-24 21:03:48.087  INFO 7228 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-10-24 21:03:48.154  INFO 7228 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:gestionmanager (H2 1.4)
+2020-10-24 21:03:48.246  WARN 7228 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 1.4.199.
+2020-10-24 21:03:48.354  INFO 7228 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.059s)
+2020-10-24 21:03:48.395  INFO 7228 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-10-24 21:03:48.535  INFO 7228 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2020-10-24 21:03:48.550  INFO 7228 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1 - Init Table
+2020-10-24 21:03:48.616  INFO 7228 --- [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC" (execution time 00:00.102s)
+2020-10-24 21:03:48.880  INFO 7228 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-24 21:03:49.056  INFO 7228 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-10-24 21:03:49.366  INFO 7228 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-24 21:03:49.681  INFO 7228 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-24 21:03:52.295  INFO 7228 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-24 21:03:52.314  INFO 7228 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 21:03:53.859  WARN 7228 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-24 21:03:54.541  WARN 7228 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'jdbcUserDetailsManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.provisioning.JdbcUserDetailsManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-10-24 21:03:54.548  INFO 7228 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 21:03:54.569  INFO 7228 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-24 21:03:54.578  INFO 7228 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-24 21:03:54.588  INFO 7228 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-10-24 21:03:54.623  INFO 7228 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-24 21:03:55.093 ERROR 7228 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jdbcUserDetailsManager in com.macrosoft.gestionboot.config.WebSecurityConfig required a bean of type 'org.springframework.security.provisioning.JdbcUserDetailsManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.provisioning.JdbcUserDetailsManager' in your configuration.
+
+2020-10-24 21:09:36.937  INFO 10792 --- [main] c.m.gestionboot.GestionBootApplication   : Starting GestionBootApplication v0.0.1-SNAPSHOT on DESKTOP-OR1MPIC with PID 10792 (C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target\gestionboot-0.0.1-SNAPSHOT.jar started by User in C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target)
+2020-10-24 21:09:36.946 DEBUG 10792 --- [main] c.m.gestionboot.GestionBootApplication   : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-10-24 21:09:36.951  INFO 10792 --- [main] c.m.gestionboot.GestionBootApplication   : The following profiles are active: dev
+2020-10-24 21:09:39.958  INFO 10792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-10-24 21:09:40.232  INFO 10792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 244ms. Found 8 JPA repository interfaces.
+2020-10-24 21:09:43.784  INFO 10792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-24 21:09:43.808  INFO 10792 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-24 21:09:43.810  INFO 10792 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-10-24 21:09:43.953  INFO 10792 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-24 21:09:43.957  INFO 10792 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6866 ms
+2020-10-24 21:09:44.546  INFO 10792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-24 21:09:45.139  INFO 10792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-24 21:09:45.161  INFO 10792 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2web'. Database available at 'jdbc:h2:mem:gestionmanager'
+2020-10-24 21:09:46.189  WARN 10792 --- [main] n.sf.ehcache.config.CacheConfiguration   : Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+2020-10-24 21:09:46.859  INFO 10792 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-10-24 21:09:46.955  INFO 10792 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:gestionmanager (H2 1.4)
+2020-10-24 21:09:47.055  WARN 10792 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 1.4.199.
+2020-10-24 21:09:47.168  INFO 10792 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.067s)
+2020-10-24 21:09:47.206  INFO 10792 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-10-24 21:09:47.325  INFO 10792 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2020-10-24 21:09:47.341  INFO 10792 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1 - Init Table
+2020-10-24 21:09:47.406  INFO 10792 --- [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC" (execution time 00:00.102s)
+2020-10-24 21:09:47.643  INFO 10792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-24 21:09:47.801  INFO 10792 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-10-24 21:09:48.137  INFO 10792 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-24 21:09:48.431  INFO 10792 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-24 21:09:51.110  INFO 10792 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-24 21:09:51.128  INFO 10792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 21:09:52.318  WARN 10792 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webSecurityConfig' defined in URL [jar:file:/C:/MACROSOFT/githubsanogotech/formationjavaspringbootfull/target/gestionboot-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/macrosoft/gestionboot/config/WebSecurityConfig.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.macrosoft.gestionboot.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$63b298f4]: Constructor threw exception; nested exception is java.lang.IllegalStateException: BeanFactory has not been injected into @Configuration class
+2020-10-24 21:09:52.322  INFO 10792 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 21:09:52.342  INFO 10792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-24 21:09:52.357  INFO 10792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-24 21:09:52.369  INFO 10792 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-10-24 21:09:52.408  INFO 10792 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-24 21:09:52.429 ERROR 10792 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'webSecurityConfig' defined in URL [jar:file:/C:/MACROSOFT/githubsanogotech/formationjavaspringbootfull/target/gestionboot-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/macrosoft/gestionboot/config/WebSecurityConfig.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.macrosoft.gestionboot.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$63b298f4]: Constructor threw exception; nested exception is java.lang.IllegalStateException: BeanFactory has not been injected into @Configuration class
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1320) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:882) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.6.RELEASE.jar!/:2.2.6.RELEASE]
+	at com.macrosoft.gestionboot.GestionBootApplication.main(GestionBootApplication.java:24) ~[classes!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:51) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:52) ~[gestionboot-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.macrosoft.gestionboot.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$63b298f4]: Constructor threw exception; nested exception is java.lang.IllegalStateException: BeanFactory has not been injected into @Configuration class
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:217) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1312) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	... 25 common frames omitted
+Caused by: java.lang.IllegalStateException: BeanFactory has not been injected into @Configuration class
+	at org.springframework.util.Assert.state(Assert.java:73) ~[spring-core-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.getBeanFactory(ConfigurationClassEnhancer.java:414) ~[spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:287) ~[spring-context-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	at com.macrosoft.gestionboot.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$63b298f4.jdbcUserDetailsManager(<generated>) ~[classes!/:0.0.1-SNAPSHOT]
+	at com.macrosoft.gestionboot.config.WebSecurityConfig.<init>(WebSecurityConfig.java:44) ~[classes!/:0.0.1-SNAPSHOT]
+	at com.macrosoft.gestionboot.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$63b298f4.<init>(<generated>) ~[classes!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:204) ~[spring-beans-5.2.5.RELEASE.jar!/:5.2.5.RELEASE]
+	... 27 common frames omitted
+
+2020-10-24 21:14:13.661  INFO 9100 --- [main] c.m.gestionboot.GestionBootApplication   : Starting GestionBootApplication v0.0.1-SNAPSHOT on DESKTOP-OR1MPIC with PID 9100 (C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target\gestionboot-0.0.1-SNAPSHOT.jar started by User in C:\MACROSOFT\githubsanogotech\formationjavaspringbootfull\target)
+2020-10-24 21:14:13.667 DEBUG 9100 --- [main] c.m.gestionboot.GestionBootApplication   : Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-10-24 21:14:13.671  INFO 9100 --- [main] c.m.gestionboot.GestionBootApplication   : The following profiles are active: dev
+2020-10-24 21:14:16.663  INFO 9100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-10-24 21:14:16.953  INFO 9100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 251ms. Found 8 JPA repository interfaces.
+2020-10-24 21:14:20.514  INFO 9100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-24 21:14:20.540  INFO 9100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-24 21:14:20.542  INFO 9100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-10-24 21:14:20.664  INFO 9100 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-24 21:14:20.665  INFO 9100 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6857 ms
+2020-10-24 21:14:21.192  INFO 9100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-24 21:14:21.806  INFO 9100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-24 21:14:21.823  INFO 9100 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2web'. Database available at 'jdbc:h2:mem:gestionmanager'
+2020-10-24 21:14:22.843  WARN 9100 --- [main] n.sf.ehcache.config.CacheConfiguration   : Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+2020-10-24 21:14:23.400  INFO 9100 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-10-24 21:14:23.477  INFO 9100 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:gestionmanager (H2 1.4)
+2020-10-24 21:14:23.564  WARN 9100 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 1.4.199.
+2020-10-24 21:14:23.671  INFO 9100 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.064s)
+2020-10-24 21:14:23.713  INFO 9100 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-10-24 21:14:23.860  INFO 9100 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2020-10-24 21:14:23.876  INFO 9100 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1 - Init Table
+2020-10-24 21:14:23.948  INFO 9100 --- [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC" (execution time 00:00.137s)
+2020-10-24 21:14:24.200  INFO 9100 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-24 21:14:24.368  INFO 9100 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-10-24 21:14:24.691  INFO 9100 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-24 21:14:24.964  INFO 9100 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-24 21:14:27.671  INFO 9100 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-24 21:14:27.695  INFO 9100 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 21:14:29.289  WARN 9100 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-24 21:14:30.024  INFO 9100 --- [main] yConfig$$EnhancerBySpringCGLIB$$2c432c11 : Start Spring Security  configure method:
+2020-10-24 21:14:30.025 DEBUG 9100 --- [main] yConfig$$EnhancerBySpringCGLIB$$2c432c11 : *** usesQuery login ***: SELECT username, password, enabled from users where username = ?
+2020-10-24 21:14:30.029 DEBUG 9100 --- [main] yConfig$$EnhancerBySpringCGLIB$$2c432c11 : *** authoritiesQuery login ***: SELECT u.username, a.authority FROM authorities a, users u WHERE u.username =?  AND u.username = a.username
+2020-10-24 21:14:30.094  INFO 9100 --- [main] o.s.s.p.JdbcUserDetailsManager           : No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2020-10-24 21:14:30.334 DEBUG 9100 --- [main] yConfig$$EnhancerBySpringCGLIB$$2c432c11 : configureGlobal method: createUseradmin
+2020-10-24 21:14:31.378  WARN 9100 --- [main] o.s.d.rest.webmvc.halbrowser.HalBrowser  : ---
+2020-10-24 21:14:31.380  WARN 9100 --- [main] o.s.d.rest.webmvc.halbrowser.HalBrowser  : Spring Data REST HAL Browser is deprecated! Prefer the HAL Explorer (artifactId: spring-data-rest-hal-explorer)!
+2020-10-24 21:14:31.384  WARN 9100 --- [main] o.s.d.rest.webmvc.halbrowser.HalBrowser  : ---
+2020-10-24 21:14:31.398  INFO 9100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-10-24 21:14:31.433  INFO 9100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-10-24 21:14:31.709  INFO 9100 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/static/**'], []
+2020-10-24 21:14:31.711  INFO 9100 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2020-10-24 21:14:31.723  INFO 9100 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2020-10-24 21:14:31.726  INFO 9100 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/images/**'], []
+2020-10-24 21:14:32.082  INFO 9100 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5abf6a99, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b17d8ab, org.springframework.security.web.header.HeaderWriterFilter@267ff4df, org.springframework.security.web.csrf.CsrfFilter@214b342f, org.springframework.security.web.authentication.logout.LogoutFilter@307c59ea, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@60807fd9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d969330, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6eda012b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@dc59ec2, org.springframework.security.web.session.SessionManagementFilter@e26a3df, org.springframework.security.web.access.ExceptionTranslationFilter@402b4f81, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@350ff014]
+2020-10-24 21:14:32.947  INFO 9100 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-24 21:14:34.283  INFO 9100 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-10-24 21:14:34.356  INFO 9100 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-10-24 21:14:34.605  INFO 9100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-24 21:14:34.620  INFO 9100 --- [main] c.m.gestionboot.GestionBootApplication   : Started GestionBootApplication in 22.453 seconds (JVM running for 23.801)
+2020-10-24 21:14:34.752  INFO 9100 --- [main] c.m.g.component.StartupEventHandler      : Startup Metric >> jvm.memory.used=17867136
+2020-10-24 21:14:34.757  INFO 9100 --- [main] c.m.g.component.StartupEventHandler      : Startup Metric >> jvm.classes.loaded=14787
+2020-10-24 21:14:34.760  INFO 9100 --- [main] c.m.g.component.StartupEventHandler      : Startup Metric >> jvm.threads.live=27
+2020-10-24 21:14:43.547  INFO 9100 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-10-24 21:14:43.565  INFO 9100 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-10-24 21:14:43.575  INFO 9100 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-24 21:14:43.633  INFO 9100 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-24 21:14:43.648  INFO 9100 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
