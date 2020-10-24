@@ -12,3 +12,12 @@ heroku buildpacks:clear --app APP_NAME
 heroku deploy:jar  my-app.jar --app APP_NAME
 heroku logs --tail
 ```
+
+##  Web
+
+** application.properties
+** replace  server.port=8080  with :
+server.port=${PORT:8080}
+
+- http://javaformation.herokuapp.com/
+
