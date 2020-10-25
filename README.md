@@ -5,10 +5,12 @@
 ```
 * create new application on heroku
 mvn  clean install -Dmaven.test.skip=true
+git push heroku master
 cd target
 heroku login
 heroku plugins:install java
 heroku buildpacks:clear --app APP_NAME
+heroku run java -version --app  APP_NAME
 heroku deploy:jar  my-app.jar --app APP_NAME
 heroku logs --tail
 ```
